@@ -188,15 +188,19 @@ export default function App() {
         </div>
 
         {/* Grand Total Footer */}
-        <div className="p-8 bg-slate-900 text-white flex justify-between items-center">
-          <div>
-            <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Grand Total Amount</p>
-            <h2 className="text-4xl font-black italic">₹{selectedItems.reduce((a, c) => a + c.total, 0).toLocaleString()}</h2>
-          </div>
-          <button className="bg-orange-500 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-orange-900/20">
-            Print Quote
-          </button>
-        </div>
+        {/* Grand Total Footer */}
+<div className="p-8 bg-slate-900 text-white flex justify-between items-center">
+  <div>
+    <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Grand Total Amount</p>
+    <h2 className="text-4xl font-black italic text-white">₹{selectedItems.reduce((a, c) => a + c.total, 0).toLocaleString()}</h2>
+  </div>
+  <button 
+    onClick={() => window.print()} // Direct browser print
+    className="bg-orange-500 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg shadow-orange-900/20 flex items-center gap-2"
+  >
+    Print Quote
+  </button>
+</div>
       </main>
     </div>
   );
